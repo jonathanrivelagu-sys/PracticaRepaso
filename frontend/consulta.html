@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Consultar Actividad</title>
+  <link rel="stylesheet" href="CSS/styles.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="navbar-logo">
+      <img src="IMGS/logo_ceti.png" height="40" width="120" alt="Logo CETI">
+    </div>
+    <ul class="navbar-links">
+      <li><a href="index.html">Registrar</a></li>
+      <li><a href="consulta.html" class="active">Consultar</a></li>
+    </ul>
+  </nav>
+
+  <main class="container">
+    <h1>Consultar Actividades</h1>
+
+    <div class="search-section">
+      <div class="search-bar-wrapper">
+        <input type="text" id="inputBusqueda" placeholder="Escribe el valor a buscar...">
+        <button type="button" id="btnBuscar" class="btn btn-primary">Buscar</button>
+      </div>
+
+      <aside class="filter-sidebar">
+        <span>Filtros</span>
+        <div class="filter-options">
+          <label><input type="checkbox" name="filtro" value="nombre" checked> Nombre</label>
+          <label><input type="checkbox" name="filtro" value="materia"> Materia</label>
+          <label><input type="checkbox" name="filtro" value="estado"> Estado</label>
+          <label><input type="checkbox" name="filtro" value="prioridad"> Prioridad</label>
+        </div>
+      </aside>
+    </div>
+
+    <div id="contenedorCoincidencias" class="results-selector" style="display: none;">
+      <label class="field-label" for="selectCoincidencias">Coincidencias encontradas (selecciona una para ver/editar):</label>
+      <select id="selectCoincidencias"></select>
+    </div>
+
+    <form id="formConsulta">
+      <input type="hidden" id="actividadId">
+
+      <div class="form-group">
+        <label class="field-label" for="resNombre">Nombre actividad</label>
+        <input type="text" id="resNombre" placeholder="Sin datos consultados">
+      </div>
+
+      <div class="form-group">
+        <label class="field-label" for="resMateria">Materia</label>
+        <input type="text" id="resMateria" placeholder="Sin datos consultados">
+      </div>
+
+      <div class="form-group">
+        <label class="field-label" for="resEstado">Estado</label>
+        <select id="resEstado">
+          <option value="">-- Sin datos --</option>
+          <option value="Completo">Completo</option>
+          <option value="Incompleto">Incompleto</option>
+          <option value="Pendiente">Pendiente</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label class="field-label">Prioridad</label>
+        <div class="checkbox-group">
+          <label><input type="checkbox" name="resPrioridad" value="Alta" class="res-chk-prioridad"> Alta</label>
+          <label><input type="checkbox" name="resPrioridad" value="Media" class="res-chk-prioridad"> Media</label>
+          <label><input type="checkbox" name="resPrioridad" value="Baja" class="res-chk-prioridad"> Baja</label>
+        </div>
+      </div>
+
+      <div class="action-buttons">
+        <button type="button" id="btnModificar" class="btn btn-warning">Modificar</button>
+        <button type="button" id="btnEliminar" class="btn btn-danger">Eliminar</button>
+      </div>
+
+      <div id="mensajeConsulta" class="mensaje"></div>
+    </form>
+  </main>
+
+  <script src="js/consulta.js"></script>
+</body>
+</html>

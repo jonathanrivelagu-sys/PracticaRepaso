@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registrar Actividad</title>
+  <link rel="stylesheet" href="CSS/styles.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="navbar-logo">
+      <img src="IMGS/logo_ceti.png" height="40" width="120" alt="Logo CETI">
+    </div>
+    <ul class="navbar-links">
+      <li><a href="index.html" class="active">Registrar</a></li>
+      <li><a href="consulta.html">Consultar</a></li>
+    </ul>
+  </nav>
+
+  <main class="container">
+    <h1>Registrar Nueva Actividad</h1>
+    
+    <form id="formRegistro">
+      <div class="form-group">
+        <label class="field-label" for="nombre">Nombre de la actividad</label>
+        <input type="text" id="nombre" name="nombre" placeholder="Ej. Ensayo de historia" required>
+      </div>
+
+      <div class="form-group">
+        <label class="field-label" for="materia">Materia</label>
+        <input type="text" id="materia" name="materia" placeholder="Ej. Historia Universal" required>
+      </div>
+
+      <div class="form-group">
+        <label class="field-label" for="estado">Estado de la actividad</label>
+        <select id="estado" name="estado" required>
+          <option value="" disabled selected>Selecciona un estado...</option>
+          <option value="Completo">Completo</option>
+          <option value="Incompleto">Incompleto</option>
+          <option value="Pendiente">Pendiente</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label class="field-label">Prioridad</label>
+        <div class="checkbox-group">
+          <label><input type="checkbox" name="prioridad" value="Alta" class="chk-prioridad"> Alta</label>
+          <label><input type="checkbox" name="prioridad" value="Media" class="chk-prioridad"> Media</label>
+          <label><input type="checkbox" name="prioridad" value="Baja" class="chk-prioridad"> Baja</label>
+        </div>
+      </div>
+
+      <button type="submit" class="btn btn-primary">Guardar Actividad</button>
+      <div id="mensajeRegistro" class="mensaje"></div>
+    </form>
+  </main>
+
+  <script src="JS/registro.js"></script>
+</body>
+</html>
